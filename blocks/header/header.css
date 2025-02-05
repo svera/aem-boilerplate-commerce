@@ -175,10 +175,16 @@ header nav .nav-sections ul > li > a {
 
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
+    width: 300px;
+    float: left;
+    display: block;
+    background: green;
 }
 
 header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
+    width: 300px;
+    float: left;
 }
 
 @media (width >= 900px) {
@@ -234,15 +240,17 @@ header nav .nav-sections ul > li > ul > li {
     position: relative;
   }
 
+  /* This is the style for the dropdown */
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
     display: block;
     position: absolute;
     left: -24px;
-    width: 200px;
+    width: 900px;
     top: 150%;
     padding: 16px;
     background-color: var(--color-neutral-500);
     white-space: initial;
+    overflow-x:scroll;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
