@@ -175,10 +175,9 @@ header nav .nav-sections ul > li > a {
 
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
-    width: 300px;
-    float: left;
-    display: block;
-    background: green;
+  width: 300px;
+  float: left;
+  display: block;
 }
 
 header nav .nav-sections ul > li > ul > li {
@@ -200,28 +199,13 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections .nav-drop {
     position: relative;
-    padding-right: 16px;
+    padding: 0 16px;
     cursor: pointer;
+    border-radius: 4px;
   }
 
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.4rem;
-    right: 0.2rem;
-    transform: rotate(135deg);
-    width: 0.6rem;
-    height: 0.6rem;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
+  header nav .nav-sections .nav-drop[aria-expanded='true'] {
+      background-color: var(--color-neutral-200);
   }
 
   header nav .nav-sections ul {
@@ -240,15 +224,15 @@ header nav .nav-sections ul > li > ul > li {
     position: relative;
   }
 
-  /* This is the style for the dropdown */
+    /* This is the style for the dropdown */
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
+    display: flex;
     position: absolute;
     left: -24px;
     width: 900px;
     top: 150%;
     padding: 16px;
-    background-color: var(--color-neutral-500);
+    background-color: var(--color-neutral-50);
     white-space: initial;
     overflow-x:scroll;
   }
@@ -501,4 +485,20 @@ header .nav-search-input .search_autocomplete .popover-container {
 .grecaptcha-badge {
   margin-top: 20px;
   z-index: 3;
+}
+
+ul li.nav-drop > ul > li {
+    font-weight: bold !important;
+    margin-bottom: 2em;
+}
+
+ul li.nav-drop > ul > li > ul {
+    margin: 1em 0 0 .5em;
+}
+
+@media (width < 900px) {
+    header nav .nav-sections ul > li > ul,
+    header nav .nav-sections ul > li > ul > li {
+        width: 100%;
+    }
 }
