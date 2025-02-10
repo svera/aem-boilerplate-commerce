@@ -180,6 +180,11 @@ header nav .nav-sections ul > li > ul {
   display: block;
 }
 
+ul li.nav-drop > ul > li {
+    font-weight: bold !important;
+    margin-bottom: 2em;
+}
+
 header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
     width: 300px;
@@ -485,11 +490,6 @@ header .nav-search-input .search_autocomplete .popover-container {
 .grecaptcha-badge {
   margin-top: 20px;
   z-index: 3;
-}
-
-ul li.nav-drop > ul > li {
-    font-weight: bold !important;
-    margin-bottom: 2em;
 }
 
 ul li.nav-drop > ul > li > ul {
