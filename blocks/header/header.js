@@ -23,6 +23,7 @@ function closeOnEscape(e) {
     if (navSectionExpanded && isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
       toggleAllNavSections(navSections);
+      document.getElementsByTagName('main')[0].classList.remove('overlay');
       navSectionExpanded.focus();
     } else if (!isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
@@ -40,6 +41,7 @@ function closeOnFocusLost(e) {
     if (navSectionExpanded && isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
       toggleAllNavSections(navSections, false);
+      document.getElementsByTagName('main')[0].classList.remove('overlay');
     } else if (!isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
       toggleMenu(nav, navSections, false);
@@ -156,6 +158,11 @@ export default async function decorate(block) {
             const expanded = navSection.getAttribute('aria-expanded') === 'true';
             toggleAllNavSections(navSections);
             navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            if (!expanded) {
+              document.getElementsByTagName('main')[0].classList.add('overlay');
+            } else {
+              document.getElementsByTagName('main')[0].classList.remove('overlay');
+            }
           }
         });
       });

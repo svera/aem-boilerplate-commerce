@@ -1,5 +1,11 @@
 /* stylelint-disable selector-class-pattern */
 
+:root {
+  --megamenu-item-width: 300px;
+  --megamenu-panel-width: 900px;
+  --megamenu-panel-height: 500px;
+}
+
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
@@ -175,20 +181,10 @@ header nav .nav-sections ul > li > a {
 
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
-  width: 300px;
-  float: left;
-  display: block;
-}
-
-ul li.nav-drop > ul > li {
-    font-weight: bold !important;
-    margin-bottom: 2em;
 }
 
 header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
-    width: 300px;
-    float: left;
 }
 
 @media (width >= 900px) {
@@ -213,6 +209,11 @@ header nav .nav-sections ul > li > ul > li {
       background-color: var(--color-neutral-200);
   }
 
+  header nav .nav-sections .nav-drop[aria-expanded='true'] > ul {
+    height: var(--megamenu-panel-height);
+    flex-flow: column wrap;
+  }
+
   header nav .nav-sections ul {
     display: flex;
     gap: 24px;
@@ -234,7 +235,7 @@ header nav .nav-sections ul > li > ul > li {
     display: flex;
     position: absolute;
     left: -24px;
-    width: 900px;
+    width: var(--megamenu-panel-width);
     top: 150%;
     padding: 16px;
     background-color: var(--color-neutral-50);
@@ -494,6 +495,20 @@ header .nav-search-input .search_autocomplete .popover-container {
 
 ul li.nav-drop > ul > li > ul {
     margin: 1em 0 0 .5em;
+}
+
+main.overlay {
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: rgb(0 0 0 / 50%);
+    z-index: 2;
+}
+
+li.nav-drop img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 @media (width < 900px) {
