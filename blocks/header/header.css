@@ -506,6 +506,7 @@ main.overlay {
 }
 
 li.nav-drop img {
+    max-width: var(--megamenu-item-width);
     width: 100%;
     height: auto;
     object-fit: contain;
